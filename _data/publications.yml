@@ -1,0 +1,42 @@
+# forked from minimal-light
+
+- title: "Geometry-Aware Attenuation Field Learning for Sparse-View CBCT Reconstruction"
+  authors: Zhentao Liu, <strong>Yu Fang</strong>, Changjian Li, Han Wu, Yuan Liu, Zhiming Cui, Dinggang Shen
+  conference_short: arXiv
+  conference: arXiv preprint arXiv:2303.14739
+  pdf: https://arxiv.org/pdf/2303.14739.pdf
+  image: assets/publications/arxiv23.jpg
+
+- title: "SNAF: Sparse-view CBCT Reconstruction with Neural Attenuation Fields"
+  authors: <strong>Yu Fang</strong>, Lanzhuju Mei, Changjian Li, Yuan Liu, Wenping Wang, Zhiming Cui, Dinggang Shen
+  conference_short: arXiv
+  conference: arXiv preprint arXiv:2211.17048
+  pdf: https://arxiv.org/pdf/2211.17048.pdf
+  image: assets/publications/snaf22.jpg
+
+- title: "Dental Anatomy Segmentation from Cone Beam CT Images"
+  authors: Minhui Tan, <strong>Yu Fang</strong>, Yu Zhang, Zhiming Cui, Dinggang Shen
+  conference_short: ISBI
+  conference: IEEE International Symposium on Biomedical Imaging <strong>(ISBI)</strong>, 2023.
+  link: https://ieeexplore.ieee.org/document/10230393
+  pdf: assets/publications/Dental_Anatomy_Segmentation_from_Cone_Beam_CT_Images.pdf
+  image: assets/publications/isbi23.jpg
+
+- title: "Curvature-enhanced Implicit Function Network for High-quality Tooth Model Generation from CBCT Images"
+  authors: <strong>Yu Fang</strong>, Zhiming Cui, Lei Ma, Lanzhuju Mei, Bojun Zhang, Yue Zhao, Zhihao Jiang, Yiqiang Zhan, Yongsheng Pan, Min Zhu, Dinggang Shen
+  conference_short: MICCAI
+  conference: International Conference on Medical Image Computing and Computer Assisted Intervention <strong>(MICCAI)</strong>, 2022.
+  link: https://link.springer.com/chapter/10.1007/978-3-031-16443-9_22
+  pdf: assets/publications/Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.pdf
+  poster: assets/publications/Poster__Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.jpg
+  notes: Early Accept
+  image: assets/publications/miccai22.jpg
+
+- title: "A Fully Automatic AI System for Tooth and Alveolar Bone Segmentation from Cone-beam CT Images"
+  authors: Zhiming Cui*, <strong>Yu Fang</strong>*, Lanzhuju Mei*, Bojun Zhang*, Bo Yu, Jiameng Liu, Caiwen Jiang, Yuhang Sun, Lei Ma, Jiawei Huang, Yang Liu, Yue Zhao, Chunfeng Lian, Zhongxiang Ding, Min Zhu, Dinggang Shen
+  conference_short: Nature Communications
+  conference: Nature Communications, 2022.
+  link: https://www.nature.com/articles/s41467-022-29637-2
+  pdf: assets/publications/A_fully_automatic_AI_system_for_tooth_and_alveolar_bone_segmentation_from_cone-beam_CT_images.pdf
+  code: https://github.com/ErdanC/Tooth-and-alveolar-bone-segmentation-from-CBCT
+  image: assets/publications/nc22.jpg

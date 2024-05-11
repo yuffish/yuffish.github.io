@@ -17,6 +17,22 @@ li,
 span,
 strong {
   color: var(--global-text-color);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-weight: 450;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 hr {
@@ -369,10 +385,12 @@ ul.task-list input[type="checkbox"] {
 // Social (bottom)
 
 .social {
-  text-align: center;
+  text-align: left;
+  margin-bottom: 1rem;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
 
     a {
       i::before {
@@ -635,9 +653,11 @@ footer.sticky-bottom {
 }
 
 // Publications
+.section {
+  margin-top: 2rem;
+}
 
 .publications {
-  margin-top: 2rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -809,6 +829,28 @@ footer.sticky-bottom {
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
     }
+  }
+}
+
+.pub-row {
+  margin-bottom: 2rem;
+  img {
+    width: 100%;
+  }
+  .badge {
+    display: inline-block;
+    background-color: var(--global-theme-color);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: absolute;
+    top: 8px;
+    left: 16px; 
+  }
+  .authors {
+    margin-bottom: 0.25rem;
+  }
+  .conference {
+    margin-bottom: 0.25rem;
   }
 }
 
