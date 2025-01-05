@@ -2,30 +2,32 @@
 
 - title: "Geometry-Aware Attenuation Field Learning for Sparse-View CBCT Reconstruction"
   authors: Zhentao Liu, <strong>Yu Fang</strong>, Changjian Li, Han Wu, Yuan Liu, Zhiming Cui, Dinggang Shen
-  conference_short: arXiv
-  conference: arXiv preprint arXiv:2303.14739
-  pdf: https://arxiv.org/pdf/2303.14739.pdf
+  conference_short: TMI
+  conference: IEEE Transactions on Medical Imaging (TMI), 2024.
+  page: https://shanghaitech-impact.github.io/Geometry-Aware-Attenuation-Learning-for-Sparse-View-CBCT-Reconstruction/
+  pdf: https://ieeexplore.ieee.org/document/10705334
+  code: https://github.com/ShanghaiTech-IMPACT/Geometry-Aware-Attenuation-Learning-for-Sparse-View-CBCT-Reconstruction
   image: assets/publications/arxiv23.jpg
 
 - title: "SNAF: Sparse-view CBCT Reconstruction with Neural Attenuation Fields"
   authors: <strong>Yu Fang</strong>, Lanzhuju Mei, Changjian Li, Yuan Liu, Wenping Wang, Zhiming Cui, Dinggang Shen
   conference_short: arXiv
-  conference: arXiv preprint arXiv:2211.17048
+  conference: arXiv preprint arXiv:2211.17048.
   pdf: https://arxiv.org/pdf/2211.17048.pdf
   image: assets/publications/snaf22.jpg
 
-- title: "Dental Anatomy Segmentation from Cone Beam CT Images"
-  authors: Minhui Tan, <strong>Yu Fang</strong>, Yu Zhang, Zhiming Cui, Dinggang Shen
-  conference_short: ISBI
-  conference: IEEE International Symposium on Biomedical Imaging <strong>(ISBI)</strong>, 2023.
-  link: https://ieeexplore.ieee.org/document/10230393
-  pdf: assets/publications/Dental_Anatomy_Segmentation_from_Cone_Beam_CT_Images.pdf
-  image: assets/publications/isbi23.jpg
+# - title: "Dental Anatomy Segmentation from Cone Beam CT Images"
+#   authors: Minhui Tan, <strong>Yu Fang</strong>, Yu Zhang, Zhiming Cui, Dinggang Shen
+#   conference_short: ISBI
+#   conference: IEEE International Symposium on Biomedical Imaging <strong>(ISBI)</strong>, 2023.
+#   link: https://ieeexplore.ieee.org/document/10230393
+#   pdf: assets/publications/Dental_Anatomy_Segmentation_from_Cone_Beam_CT_Images.pdf
+#   image: assets/publications/isbi23.jpg
 
 - title: "Curvature-enhanced Implicit Function Network for High-quality Tooth Model Generation from CBCT Images"
   authors: <strong>Yu Fang</strong>, Zhiming Cui, Lei Ma, Lanzhuju Mei, Bojun Zhang, Yue Zhao, Zhihao Jiang, Yiqiang Zhan, Yongsheng Pan, Min Zhu, Dinggang Shen
   conference_short: MICCAI
-  conference: International Conference on Medical Image Computing and Computer Assisted Intervention <strong>(MICCAI)</strong>, 2022.
+  conference: International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2022.
   link: https://link.springer.com/chapter/10.1007/978-3-031-16443-9_22
   pdf: assets/publications/Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.pdf
   poster: assets/publications/Poster__Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.jpg

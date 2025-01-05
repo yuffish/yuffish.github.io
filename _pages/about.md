@@ -16,6 +16,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I'm currently a first-year Ph.D. student in Computer Science at the University of North Carolina at Chapel Hill, working with [Marc Niethammer](https://biag.cs.unc.edu/author/marc-niethammer/) and [Roni Sengupta](https://www.cs.unc.edu/~ronisen/). Before that, I obtained my master's degree in Computer Science from [ShanghaiTech University](https://www.shanghaitech.edu.cn/eng/), working in [IDEA Lab](http://idea.bme.shanghaitech.edu.cn/), advised by [Dinggang Shen](https://scholar.google.com/citations?user=v6VYQC8AAAAJ) and [Zhiming Cui](https://shanghaitech-impact.github.io/). 
+I am a second year Ph.D. student in Computer Science at the University of North Carolina at Chapel Hill. Before that, I obtained my master's degree at [ShanghaiTech University](https://www.shanghaitech.edu.cn/eng/), advised by [Dinggang Shen](https://scholar.google.com/citations?user=v6VYQC8AAAAJ) and [Zhiming Cui](https://erdanc.github.io/). 
 
-I'm broadly interested in 3D computer vision, including applications of neural rendering, generative AI for 3D content creation, and intersection with perception tasks in embodied AI and robotics.
+I am broadly interested in 3D computer vision and embodied AI, focusing on bridging the gap between agents and humans, as well as the virtual and physical worlds. My research includes developing spatial intelligence, embodied intelligence, and generative AI for content creation and editing. Currently, I am working on reducing sim-to-real gaps in embodied AI to scale robot learning.
