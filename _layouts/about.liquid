@@ -6,7 +6,9 @@ layout: default
     <h1 class="post-title">
       {% if site.title == 'blank' %}
         <span class="font-weight-bold">
-          {{ site.first_name }} {{ site.middle_name }}{{ site.last_name }}
+          {{ site.first_name }}
+          {{ site.middle_name -}}
+          {{- site.last_name }}
         </span>
       {% else %}
         {{ site.title }}
@@ -63,53 +65,57 @@ layout: default
         <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
       </h2>
       {% include latest_posts.liquid %}
-    {% endif %}    
+    {% endif %}
   </article>
 </div>
 
-
 <div class="section publications">
   <h2>Publications</h2>
-    {% for paper in site.data.publications %}
-      <div class="row pub-row">
-        <div class="col-sm-5 pub-image">
-          {% if paper.image %} 
+  {% for paper in site.data.publications %}
+    <div class="row pub-row">
+      <div class="col-sm-5 pub-image">
+        {% if paper.image %}
           <a href="{{ paper.image }}" target="_blank"><img src="{{ paper.image }}"></a>
+        {% endif %}
+      </div>
+      <div class="col-sm-7 pub-content">
+        <h3 class="title">{{ paper.title }}</h3>
+        <div class="authors">{{ paper.authors }}.</div>
+        <div class="conference">
+          <em>{{ paper.conference }}</em>
+        </div>
+        <div class="links">
+          {% if paper.page %}
+            <a href="{{ paper.page }}" target="_blank">[project page]</a>
+          {% endif %}
+          {% if paper.link %}
+            <a href="{{ paper.link }}" target="_blank">[link]</a>
+          {% endif %}
+          {% if paper.pdf %}
+            <a href="{{ paper.pdf }}" target="_blank">[pdf]</a>
+          {% endif %}
+          {% if paper.code %}
+            <a href="{{ paper.code }}" target="_blank">[code]</a>
+          {% endif %}
+          {% if paper.poster %}
+            <a href="{{ paper.poster }}" target="_blank">[poster]</a>
+          {% endif %}
+          {% if paper.bibtex %}
+            <a href="{{ paper.bibtex }}" target="_blank">[bibtex]</a>
+          {% endif %}
+          {% if paper.notes %}
+            &nbsp;
+            <strong>
+              <i style="color:#e74d3c">{{ paper.notes }}</i></strong
+            >
+          {% endif %}
+          {% if paper.others %}
+            {{ paper.others }}
           {% endif %}
         </div>
-        <div class="col-sm-7 pub-content">
-          <h3 class="title">{{ paper.title }}</h3>
-          <div class="authors">{{ paper.authors }}.</div>
-          <div class="conference"><em>{{ paper.conference }}</em></div>
-          <div class="links">
-            {% if paper.page %} 
-              <a href="{{ paper.page }}" target="_blank">[project page]</a>
-              {% endif %}
-            {% if paper.link %} 
-              <a href="{{ paper.link }}" target="_blank">[link]</a>
-              {% endif %}
-            {% if paper.pdf %} 
-            <a href="{{ paper.pdf }}" target="_blank">[pdf]</a>
-            {% endif %}
-            {% if paper.code %} 
-            <a href="{{ paper.code }}" target="_blank">[code]</a>
-            {% endif %}
-            {% if paper.poster %} 
-              <a href="{{ paper.poster }}" target="_blank">[poster]</a>
-              {% endif %}
-            {% if paper.bibtex %} 
-            <a href="{{ paper.bibtex }}" target="_blank">[bibtex]</a>
-            {% endif %}
-            {% if paper.notes %} 
-            &nbsp; <strong> <i style="color:#e74d3c">{{ paper.notes }}</i></strong>
-            {% endif %}
-            {% if paper.others %} 
-            {{ paper.others }}
-            {% endif %}
-          </div>
-        </div>
+      </div>
     </div>
-    {% endfor %}
+  {% endfor %}
 </div>
 
 <div class="section services">
@@ -133,4 +139,3 @@ layout: default
     {% endfor %}
   </ul>
 </div>
-

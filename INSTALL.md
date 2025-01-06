@@ -57,10 +57,23 @@ $ docker compose up
 ```
 
 On my Macbook M2 Pro, it only needs to install Docker Desktop, and
+
 ```bash
 $ docker compose pull
 $ docker compose build
 $ docker compose up
+```
+
+After updating the code, do format check
+
+```bash
+$ npx prettier . --check
+```
+
+If it doesn't pass, run
+
+```bash
+$ npx prettier . --write
 ```
 
 Note that when you run it for the first time, it will download a docker image of size 400MB or so. To see the template running, open your browser and go to `http://localhost:8080`. You should see a copy of the theme's demo website.
