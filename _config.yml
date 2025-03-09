@@ -18,7 +18,8 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 # icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 icon: avatar.png
 
-CV: CV_Yu_Fang_UNC_phd.pdf
+# CV: CV_Yu_Fang_UNC_phd.pdf
+CV: https://drive.google.com/file/d/1Sccq2sjywxN6ExVaWEGbmRpfh0jxVpwN/view?usp=sharing
 url: https://yuffish.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: true # set to true if you want to display last updated in the footer
