@@ -138,518 +138,533 @@
     </div>
     <div style="height: 0.5em"></div>
 
-    <section class="wide">
-      <p style="text-align: center; max-width: 50%; margin: 1em auto;">
-        <strong>TLDR;</strong>
-        We propose a novel real-to-sim-to-real approach for scaling real robot datasets and adapting VLA models to target domains.
-      </p>
-      <div style="height: 0.5em"></div>
-      <video
-        src="{{ site.baseurl }}/assets/rebot/rebot_video.mp4"
-        width="100%"
-        controls
-        style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-      ></video>
-    </section>
-    <section>
-      <h2>Abstract</h2>
-      <p>
-        Vision-language-action (VLA) models present a promising paradigm by training policies directly on real robot datasets like Open X-Embodiment.
-        However, the high cost of real-world data collection hinders further data scaling, thereby restricting the generalizability of VLAs.
-      </p>
-      <p>
-        In this paper, we introduce ReBot, a novel real-to-sim-to-real approach for scaling real robot datasets and adapting VLA models to target
-        domains, which is the last-mile deployment challenge in robot manipulation. Specifically, ReBot replays real-world robot trajectories in
-        simulation to diversify manipulated objects (real-to-sim), and integrates the simulated movements with inpainted real-world background to
-        synthesize physically realistic and temporally consistent robot videos (sim-to-real).
-      </p>
-      <p>
-        Our approach has several advantages:
-        <ul>
-          <li>It enjoys the benefit of real data to minimize the sim-to-real gap.</li>
-          <li>It leverages the scalability of simulation.</li>
-          <li>It can generalize a pretrained VLA to a target domain with fully automated data pipelines.</li>
-        </ul>
-      </p>
-      <p>
-        Extensive experiments in both simulation and real-world environments show that ReBot significantly enhances the performance and robustness of
-        VLAs. For example, in SimplerEnv with the WidowX robot, ReBot improved the in-domain performance of Octo by 7.2% and OpenVLA by 21.8%, and
-        out-of-domain generalization by 19.9% and 9.4%, respectively. For real-world evaluation with a Franka robot, ReBot increased the success rates
-        of Octo by 17% and OpenVLA by 20%.
-      </p>
-    </section>
-
-    <section>
-      <h2>Method</h2>
-      <img src="{{ site.baseurl }}/assets/rebot/rebot_method.png" style="max-width: 120%; margin: 1em 0; transform: translateX(-10%);">
-      <p>
-        ReBot includes three key components:
-        <ul>
-          <li>
-            <b>Real-to-Sim Trajectory Replay.</b> For each real-world episode, we automatically set up digital twins in a simulation environment, and
-            replay the real-world robot trajectory to obtain simulated movements for manipulating new objects. We validate the scalability of our
-            approach by demonstrating that real-world trajectories can be successfully reused to manipulate different shapes of objects in simulation.
-          </li>
-          <li>
-            <b>Real-world Background Inpainting.</b> To obtain task-agnostic real-world background for video synthesis, we introduce an automated
-            inpainting module with GroundedSAM2 to segment and track the robot and object (i.e., task-specific elements) in original real-world
-            videos, and remove them with ProPainter.
-          </li>
-          <li>
-            <b>Sim-to-Real Video Synthesis.</b> We eventually integrate simulated movements with task-agnostic real-world background, producing
-            synthetic videos with realistic physics and excellent temporal consistency.
-          </li>
-        </ul>
-      </p>
-    </section>
-
-    <section class="wide">
-      <h2>Comparison of Synthetic Videos</h2>
-      <div class="content has-text-centered">
-        <h5>Example with DROID: redbull can → coke can</h5>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/droid_original.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Original video</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/droid_rosie.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>ROSIE</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/droid_rebot.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>ReBot</p>
-          </div>
-        </div>
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <p style="text-align: center; max-width: 50em; margin: 1em auto;">
+          <strong>TLDR;</strong>
+          We propose a novel real-to-sim-to-real approach for scaling real robot datasets and adapting VLA models to target domains.
+        </p>
+        <video
+          src="{{ site.baseurl }}/assets/rebot/rebot_video.mp4"
+          width="100%"
+          controls
+          style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+        ></video>
       </div>
-
-      <div class="content has-text-centered">
-        <h5>Example with BridgeData V2: spatula → spoon</h5>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/bridge_original.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Original video</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/bridge_rosie.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>ROSIE</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/bridge_rebot.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>ReBot</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="content has-text-centered">
-        <h5>Example with our dataset: grape → carrot</h5>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/dataset_original.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Original video</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/dataset_rosie.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>ROSIE</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/dataset_rebot.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>ReBot</p>
-          </div>
-        </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2>Abstract</h2>
+        <p>
+          Vision-language-action (VLA) models present a promising paradigm by training policies directly on real robot datasets like Open
+          X-Embodiment. However, the high cost of real-world data collection hinders further data scaling, thereby restricting the generalizability of
+          VLAs.
+        </p>
+        <p>
+          In this paper, we introduce ReBot, a novel real-to-sim-to-real approach for scaling real robot datasets and adapting VLA models to target
+          domains, which is the last-mile deployment challenge in robot manipulation. Specifically, ReBot replays real-world robot trajectories in
+          simulation to diversify manipulated objects (real-to-sim), and integrates the simulated movements with inpainted real-world background to
+          synthesize physically realistic and temporally consistent robot videos (sim-to-real).
+        </p>
+        <p>
+          Our approach has several advantages:
+          <ul>
+            <li>It enjoys the benefit of real data to minimize the sim-to-real gap.</li>
+            <li>It leverages the scalability of simulation.</li>
+            <li>It can generalize a pretrained VLA to a target domain with fully automated data pipelines.</li>
+          </ul>
+        </p>
+        <p>
+          Extensive experiments in both simulation and real-world environments show that ReBot significantly enhances the performance and robustness
+          of VLAs. For example, in SimplerEnv with the WidowX robot, ReBot improved the in-domain performance of Octo by 7.2% and OpenVLA by 21.8%,
+          and out-of-domain generalization by 19.9% and 9.4%, respectively. For real-world evaluation with a Franka robot, ReBot increased the success
+          rates of Octo by 17% and OpenVLA by 20%.
+        </p>
       </div>
     </section>
 
-    <section class="wide">
-      <h2>Evaluation in Simulation Environment</h2>
-      <div class="content has-text-centered">
-        <h5>In-domain Performance on the WidowX robot</h5>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_spoon.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put spoon on towel</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_carrot.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put carrot on plate</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_cube.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p style="font-size: 14px;">Stack green block on yellow block</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_eggplant.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put eggplant in yellow basket</p>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2>Method</h2>
+        <img src="{{ site.baseurl }}/assets/rebot/rebot_method.png" style="max-width: 120%; margin: 1em 0; transform: translateX(-10%);">
+        <p>
+          ReBot includes three key components:
+          <ul>
+            <li>
+              <b>Real-to-Sim Trajectory Replay.</b> For each real-world episode, we automatically set up digital twins in a simulation environment,
+              and replay the real-world robot trajectory to obtain simulated movements for manipulating new objects. We validate the scalability of
+              our approach by demonstrating that real-world trajectories can be successfully reused to manipulate different shapes of objects in
+              simulation.
+            </li>
+            <li>
+              <b>Real-world Background Inpainting.</b> To obtain task-agnostic real-world background for video synthesis, we introduce an automated
+              inpainting module with GroundedSAM2 to segment and track the robot and object (i.e., task-specific elements) in original real-world
+              videos, and remove them with ProPainter.
+            </li>
+            <li>
+              <b>Sim-to-Real Video Synthesis.</b> We eventually integrate simulated movements with task-agnostic real-world background, producing
+              synthetic videos with realistic physics and excellent temporal consistency.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2>Comparison of Synthetic Videos</h2>
+        <div class="content has-text-centered">
+          <h5>Example with DROID: redbull can → coke can</h5>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/droid_original.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Original video</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/droid_rosie.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>ROSIE</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/droid_rebot.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>ReBot</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="content has-text-centered">
-        <h5>Generalization Performance on the WidowX robot</h5>
-        <p>Physical: unseen object sizes</p>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_spoon-0.8x.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Spoon size: 0.8x</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_spoon-1.2x.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Spoon size: 1.2x</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_carrot-0.8x.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Carrot size: 0.8x</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_carrot-1.2x.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Carrot size: 1.2x</p>
+
+        <div class="content has-text-centered">
+          <h5>Example with BridgeData V2: spatula → spoon</h5>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/bridge_original.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Original video</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/bridge_rosie.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>ROSIE</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/bridge_rebot.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>ReBot</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="content has-text-centered">
-        <p>Semantics: unseen instructions</p>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_spoon.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>"Place spoon onto towel"</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_carrot.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>"Put vegetable on plate"</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_cube.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p style="font-size: 14px;">"Put green cube onto yellow cube"</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_eggplant.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>"Move eggplant into basket"</p>
-          </div>
-        </div>
-      </div>
-      <div class="content has-text-centered">
-        <p>Subject: unseen objects</p>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_apple.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put apple on plate</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_fanta.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put fanta can on towel</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_orange.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put orange on plate</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_redbull.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put red bull can on plate</p>
-          </div>
-        </div>
-      </div>
-      <div class="content has-text-centered">
-        <h5>Cross-embodiment Performance on Google Robot</h5>
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_cross_coke-standing.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Pick coke can (standing)</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_cross_coke-horizontal.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Pick coke can (horizontal)</p>
-          </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/simplerenv_cross_coke-vertical.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Pick coke can (vertical)</p>
+
+        <div class="content has-text-centered">
+          <h5>Example with our dataset: grape → carrot</h5>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/dataset_original.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Original video</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/dataset_rosie.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>ROSIE</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/dataset_rebot.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>ReBot</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="wide">
-      <h2>Evaluation in Real-world Environment</h2>
-      <div class="content has-text-centered">
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/realworld_carrot.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put carrot in blue plate</p>
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2>Evaluation in Simulation Environment</h2>
+        <div class="content has-text-centered">
+          <h5>In-domain Performance on the WidowX robot</h5>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_spoon.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put spoon on towel</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_carrot.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put carrot on plate</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_cube.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p style="font-size: 14px;">Stack green block on yellow block</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_in-domain_eggplant.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put eggplant in yellow basket</p>
+            </div>
           </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/realworld_grape.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put grape in yellow plate</p>
+        </div>
+        <div class="content has-text-centered">
+          <h5>Generalization Performance on the WidowX robot</h5>
+          <p>Physical: unseen object sizes</p>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_spoon-0.8x.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Spoon size: 0.8x</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_spoon-1.2x.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Spoon size: 1.2x</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_carrot-0.8x.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Carrot size: 0.8x</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_physical_carrot-1.2x.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Carrot size: 1.2x</p>
+            </div>
           </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/realworld_fanta.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put fanta can in blue plate</p>
+        </div>
+        <div class="content has-text-centered">
+          <p>Semantics: unseen instructions</p>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_spoon.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>"Place spoon onto towel"</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_carrot.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>"Put vegetable on plate"</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_cube.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p style="font-size: 14px;">"Put green cube onto yellow cube"</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_semantics_eggplant.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>"Move eggplant into basket"</p>
+            </div>
           </div>
-          <div class="column has-text-centered">
-            <video
-              src="{{ site.baseurl }}/assets/rebot/realworld_cube.mp4"
-              width="100%"
-              autoplay
-              loop
-              controls
-              muted
-              style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
-            ></video>
-            <p>Put black cube in yellow plate</p>
+        </div>
+        <div class="content has-text-centered">
+          <p>Subject: unseen objects</p>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_apple.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put apple on plate</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_fanta.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put fanta can on towel</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_orange.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put orange on plate</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_subject_redbull.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put red bull can on plate</p>
+            </div>
+          </div>
+        </div>
+        <div class="content has-text-centered">
+          <h5>Cross-embodiment Performance on Google Robot</h5>
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_cross_coke-standing.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Pick coke can (standing)</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_cross_coke-horizontal.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Pick coke can (horizontal)</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/simplerenv_cross_coke-vertical.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Pick coke can (vertical)</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Citation</h2>
-      <pre>
-<code>TBD</code></pre>
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2>Evaluation in Real-world Environment</h2>
+        <div class="content has-text-centered">
+          <div class="columns is-vcentered">
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/realworld_carrot.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put carrot in blue plate</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/realworld_grape.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put grape in yellow plate</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/realworld_fanta.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put fanta can in blue plate</p>
+            </div>
+            <div class="column has-text-centered">
+              <video
+                src="{{ site.baseurl }}/assets/rebot/realworld_cube.mp4"
+                width="100%"
+                autoplay
+                loop
+                controls
+                muted
+                style="box-shadow: 0 0 1em rgba(0, 0, 0, 0.07)"
+              ></video>
+              <p>Put black cube in yellow plate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2>Citation</h2>
+        <pre>
+  <code>TBD</code></pre>
+      </div>
     </section>
   </body>
 </html>

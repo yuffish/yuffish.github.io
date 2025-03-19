@@ -40,7 +40,7 @@ video {
   border-radius: 0.3em;
 }
 
-section {
+/* section {
   max-width: 40%;
   margin: 0 auto 4em auto;
   padding: 0 2em;
@@ -48,7 +48,7 @@ section {
 
 section.wide {
   max-width: 50%;
-}
+} */
 
 p {
   margin: 1em auto;
@@ -64,7 +64,7 @@ p {
 
 ul {
   margin: 0 auto;
-  padding: inherit;
+  padding-left: 1.5em;
   margin-top: -0.75em;
   list-style: disc;
 }
