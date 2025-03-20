@@ -3,9 +3,9 @@
 - title: "ReBot: Scaling Robot Learning with Real-to-Sim-to-Real Robotic Video Synthesis"
   authors: <strong>Yu Fang</strong>, Yue Yang, Xinghao Zhu, Kaiyuan Zheng, Gedas Bertasius, Daniel Szafir, Mingyu Ding
   conference_short: arXiv
-  conference: arXiv preprint.
+  conference: arXiv, 2025.
   page: rebot/
-  pdf: assets/rebot/rebot_paper.pdf
+  link: https://arxiv.org/abs/2503.14526
   image: assets/rebot/rebot_teaser.png
 
 - title: "Geometry-Aware Attenuation Field Learning for Sparse-View CBCT Reconstruction"
@@ -20,7 +20,7 @@
 - title: "SNAF: Sparse-view CBCT Reconstruction with Neural Attenuation Fields"
   authors: <strong>Yu Fang</strong>, Lanzhuju Mei, Changjian Li, Yuan Liu, Wenping Wang, Zhiming Cui, Dinggang Shen
   conference_short: arXiv
-  conference: arXiv preprint arXiv:2211.17048.
+  conference: arXiv, 2022.
   link: https://arxiv.org/abs/2211.17048
   image: assets/publications/snaf22.jpg
 
