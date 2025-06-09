@@ -29,7 +29,14 @@ layout: default
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
-          <img src="assets/img/{{ page.profile.image }}" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="photo.jpg" loading="eager">
+          <img
+            src="assets/img/{{ page.profile.image }}"
+            class="img-fluid z-depth-1 rounded"
+            width="100%"
+            height="auto"
+            alt="photo.jpg"
+            loading="eager"
+          >
         {% endif %}
       </div>
     {% endif %}
