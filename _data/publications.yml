@@ -6,6 +6,7 @@
   conference: arXiv, 2025.
   page: rebot/
   link: https://arxiv.org/abs/2503.14526
+  code: https://github.com/yuffish/rebot
   image: assets/rebot/rebot_teaser.png
 
 - title: "Geometry-Aware Attenuation Field Learning for Sparse-View CBCT Reconstruction"
