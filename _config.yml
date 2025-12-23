@@ -16,7 +16,7 @@ footer_text: >
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 # icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
-icon: avatar.png
+icon: avatar.jpg
 
 # CV: CV_Yu_Fang_UNC_phd.pdf
 CV: https://drive.google.com/file/d/1Sccq2sjywxN6ExVaWEGbmRpfh0jxVpwN/view?usp=sharing
