@@ -1,4 +1,20 @@
 # forked from minimal-light
+- title: "When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs"
+  authors: <strong>Yu Fang</strong>, Yuchun Feng, Dong Jing, Jiaqi Liu, Yue Yang, Zhenyu Wei, Daniel Szafir, Mingyu Ding
+  conference_short: arXiv
+  conference: arXiv, 2026.
+  page: https://vla-va.github.io/
+  link: https://arxiv.org/abs/2602.17659
+  image: assets/publications/when_vision_overrides_language.jpg
+
+- title: "LiLo-VLA: Compositional Long-Horizon Manipulation via Linked Object-Centric Policies"
+  authors: Yue Yang, Shuo Cheng, <strong>Yu Fang</strong>, Homanga Bharadhwaj, Mingyu Ding, Gedas Bertasius, Daniel Szafir
+  conference_short: arXiv
+  conference: arXiv, 2026.
+  page: https://yy-gx.github.io/LiLo-VLA/
+  # link:
+  image: assets/publications/lilo-vla.jpg
+
 - title: "Robotic VLA Benefits from Joint Learning with Motion Image Diffusion"
   authors: <strong>Yu Fang</strong>, Kanchana Ranasinghe, Le Xue, Honglu Zhou, Juntao Tan, Ran Xu, Shelby Heinecke, Caiming Xiong, Silvio Savarese, Daniel Szafir, Mingyu Ding, Michael S. Ryoo, Juan Carlos Niebles
   conference_short: arXiv
@@ -6,6 +22,15 @@
   page: https://vla-motion.github.io/
   link: https://arxiv.org/abs/2512.18007
   image: assets/publications/vla-motion.jpg
+
+- title: "Future Optical Flow Prediction Improves Robot Control & Video Generation"
+  authors: Kanchana Ranasinghe, Honglu Zhou, <strong>Yu Fang</strong>, Luyu Yang, Le Xue, Ran Xu, Caiming Xiong, Silvio Savarese, Michael S Ryoo, Juan Carlos Niebles
+  conference_short: arXiv
+  conference: arXiv, 2026.
+  page: https://fofpred.github.io/
+  link: https://arxiv.org/abs/2601.10781
+  code: https://github.com/SalesforceAIResearch/FOFPred
+  image: assets/publications/fofpred.jpg
 
 - title: "ReBot: Scaling Robot Learning with Real-to-Sim-to-Real Robotic Video Synthesis"
   authors: <strong>Yu Fang</strong>, Yue Yang, Xinghao Zhu, Kaiyuan Zheng, Gedas Bertasius, Daniel Szafir, Mingyu Ding
@@ -16,14 +41,14 @@
   code: https://github.com/yuffish/rebot
   image: assets/rebot/rebot_teaser.png
 
-- title: "Geometry-Aware Attenuation Field Learning for Sparse-View CBCT Reconstruction"
-  authors: Zhentao Liu, <strong>Yu Fang</strong>, Changjian Li, Han Wu, Yuan Liu, Zhiming Cui, Dinggang Shen
-  conference_short: TMI
-  conference: IEEE Transactions on Medical Imaging (TMI), 2024.
-  page: https://shanghaitech-impact.github.io/Geometry-Aware-Attenuation-Learning-for-Sparse-View-CBCT-Reconstruction/
-  link: https://ieeexplore.ieee.org/document/10705334
-  code: https://github.com/ShanghaiTech-IMPACT/Geometry-Aware-Attenuation-Learning-for-Sparse-View-CBCT-Reconstruction
-  image: assets/publications/arxiv23.jpg
+# - title: "Geometry-Aware Attenuation Field Learning for Sparse-View CBCT Reconstruction"
+#   authors: Zhentao Liu, <strong>Yu Fang</strong>, Changjian Li, Han Wu, Yuan Liu, Zhiming Cui, Dinggang Shen
+#   conference_short: TMI
+#   conference: IEEE Transactions on Medical Imaging (TMI), 2024.
+#   page: https://shanghaitech-impact.github.io/Geometry-Aware-Attenuation-Learning-for-Sparse-View-CBCT-Reconstruction/
+#   link: https://ieeexplore.ieee.org/document/10705334
+#   code: https://github.com/ShanghaiTech-IMPACT/Geometry-Aware-Attenuation-Learning-for-Sparse-View-CBCT-Reconstruction
+#   image: assets/publications/arxiv23.jpg
 
 - title: "SNAF: Sparse-view CBCT Reconstruction with Neural Attenuation Fields"
   authors: <strong>Yu Fang</strong>, Lanzhuju Mei, Changjian Li, Yuan Liu, Wenping Wang, Zhiming Cui, Dinggang Shen
@@ -47,7 +72,7 @@
   link: https://link.springer.com/chapter/10.1007/978-3-031-16443-9_22
   pdf: assets/publications/Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.pdf
   poster: assets/publications/Poster__Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.jpg
-  notes: Early Accept
+  # notes: Early Accept
   image: assets/publications/miccai22.jpg
 
 - title: "A Fully Automatic AI System for Tooth and Alveolar Bone Segmentation from Cone-beam CT Images"
