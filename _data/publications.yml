@@ -20,7 +20,7 @@
 - title: "When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs"
   authors: <strong>Yu Fang</strong>, Yuchun Feng, Dong Jing, Jiaqi Liu, Yue Yang, Zhenyu Wei, Daniel Szafir, Mingyu Ding
   conference_short: arXiv
-  conference: arXiv, 2026.
+  conference: CoRL 2026 (Highlight)
   page: https://vla-cf.github.io/
   link: https://arxiv.org/abs/2602.17659
   code: https://github.com/yuffish/libero-cf
@@ -29,7 +29,7 @@
 - title: "LiLo-VLA: Compositional Long-Horizon Manipulation via Linked Object-Centric Policies"
   authors: Yue Yang, Shuo Cheng, <strong>Yu Fang</strong>, Homanga Bharadhwaj, Mingyu Ding, Gedas Bertasius, Daniel Szafir
   conference_short: arXiv
-  conference: arXiv, 2026.
+  conference: IROS 2026 @ CompRobotics (Best Paper Award)
   page: https://yy-gx.github.io/LiLo-VLA/
   link: https://arxiv.org/abs/2602.21531
   code: https://github.com/yy-gx/LiLo-VLA
@@ -88,7 +88,8 @@
 - title: "Curvature-enhanced Implicit Function Network for High-quality Tooth Model Generation from CBCT Images"
   authors: <strong>Yu Fang</strong>, Zhiming Cui, Lei Ma, Lanzhuju Mei, Bojun Zhang, Yue Zhao, Zhihao Jiang, Yiqiang Zhan, Yongsheng Pan, Min Zhu, Dinggang Shen
   conference_short: MICCAI
-  conference: International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2022.
+  # conference: International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2022.
+  conference: MICCAI 2022 (early accepted)
   link: https://link.springer.com/chapter/10.1007/978-3-031-16443-9_22
   pdf: assets/publications/Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.pdf
   poster: assets/publications/Poster__Curvature-Enhanced_Implicit_Function_Network_for_High-quality_Tooth_Model_Generation_from_CBCT_Images.jpg
