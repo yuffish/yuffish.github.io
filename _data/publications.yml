@@ -20,7 +20,7 @@
 - title: "When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs"
   authors: <strong>Yu Fang</strong>, Yuchun Feng, Dong Jing, Jiaqi Liu, Yue Yang, Zhenyu Wei, Daniel Szafir, Mingyu Ding
   conference_short: arXiv
-  conference: CoRL 2026 (Highlight)
+  conference: CoRL 2026 (Spotlight)
   page: https://vla-cf.github.io/
   link: https://arxiv.org/abs/2602.17659
   code: https://github.com/yuffish/libero-cf
