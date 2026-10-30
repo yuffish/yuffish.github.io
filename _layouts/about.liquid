@@ -74,7 +74,10 @@ layout: default
         <h3 class="title">{{ paper.title }}</h3>
         <div class="authors">{{ paper.authors }}.</div>
         <div class="conference">
-          <em>{{ paper.conference }}</em>
+          <em
+            >{{ paper.conference }}
+            {%- if paper.award %} <span class="award">({{ paper.award }})</span>{% endif -%}
+          </em>
         </div>
         <div class="links">
           {% if paper.page %}
@@ -88,6 +91,15 @@ layout: default
           {% endif %}
           {% if paper.code %}
             <a href="{{ paper.code }}" target="_blank">[code]</a>
+          {% endif %}
+          {% if paper.dataset %}
+            <a href="{{ paper.dataset }}" target="_blank">[dataset]</a>
+          {% endif %}
+          {% if paper.model %}
+            <a href="{{ paper.model }}" target="_blank">[model]</a>
+          {% endif %}
+          {% if paper.models %}
+            <a href="{{ paper.models }}" target="_blank">[models]</a>
           {% endif %}
           {% if paper.poster %}
             <a href="{{ paper.poster }}" target="_blank">[poster]</a>

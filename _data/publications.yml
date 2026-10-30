@@ -1,47 +1,27 @@
 # forked from minimal-light
-- title: "DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation"
-  authors: <strong>Yu Fang</strong>*, Wanxi Dong*, Jiaqi Liu, Yue Yang, Mingxiao Huo, Yao Mu, Huaxiu Yao, Li Erran Li, Daniel Szafir, Mingyu Ding
-  conference_short: arXiv
-  conference: arXiv, 2026.
-  page: https://dense-reward.github.io/
-  link: https://arxiv.org/abs/2607.13033
-  code: https://github.com/dense-reward/dense-reward
-  image: assets/publications/densereward.jpg
-
-- title: "WatchAct: A Benchmark for Behavior-Grounded Robot Manipulation"
-  authors: Baiqi Li, Ce Zhang, <strong>Yu Fang</strong>, Yue Yang, Shangzhe Li, Mingyu Ding, Gedas Bertasius
-  conference_short: arXiv
-  conference: arXiv, 2026.
-  page: https://baiqi-li.github.io/watchact_page/
-  link: https://arxiv.org/abs/2606.26443
-  code: https://github.com/Baiqi-Li/WatchAct
-  image: assets/publications/watchact.jpg
 
 - title: "When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs"
   authors: <strong>Yu Fang</strong>, Yuchun Feng, Dong Jing, Jiaqi Liu, Yue Yang, Zhenyu Wei, Daniel Szafir, Mingyu Ding
   conference_short: arXiv
-  conference: CoRL 2026 (Spotlight)
+  conference: CoRL 2026
+  award: Spotlight
   page: https://vla-cf.github.io/
   link: https://arxiv.org/abs/2602.17659
-  code: https://github.com/yuffish/libero-cf
+  code: https://github.com/yuffish/VLA-CF
+  models: https://huggingface.co/VLA-CF/models
   image: assets/publications/when_vision_overrides_language.jpg
 
 - title: "LiLo-VLA: Compositional Long-Horizon Manipulation via Linked Object-Centric Policies"
   authors: Yue Yang, Shuo Cheng, <strong>Yu Fang</strong>, Homanga Bharadhwaj, Mingyu Ding, Gedas Bertasius, Daniel Szafir
   conference_short: arXiv
-  conference: IROS 2026 @ CompRobotics (Best Paper Award)
+  conference: IROS 2026 @ CompRobotics
+  award: Best Paper Award
   page: https://yy-gx.github.io/LiLo-VLA/
   link: https://arxiv.org/abs/2602.21531
   code: https://github.com/yy-gx/LiLo-VLA
+  dataset: https://huggingface.co/datasets/yygx/lilo-vla-atomic-skills-rlds
+  model: https://huggingface.co/yygx/lilo-vla-openvla-oft
   image: assets/publications/lilo-vla.jpg
-
-- title: "Robotic VLA Benefits from Joint Learning with Motion Image Diffusion"
-  authors: <strong>Yu Fang</strong>, Kanchana Ranasinghe, Le Xue, Honglu Zhou, Juntao Tan, Ran Xu, Shelby Heinecke, Caiming Xiong, Silvio Savarese, Daniel Szafir, Mingyu Ding, Michael S. Ryoo, Juan Carlos Niebles
-  conference_short: arXiv
-  conference: arXiv, 2025.
-  page: https://vla-motion.github.io/
-  link: https://arxiv.org/abs/2512.18007
-  image: assets/publications/vla-motion.jpg
 
 - title: "Future Optical Flow Prediction Improves Robot Control & Video Generation"
   authors: Kanchana Ranasinghe, Honglu Zhou, <strong>Yu Fang</strong>, Luyu Yang, Le Xue, Ran Xu, Caiming Xiong, Silvio Savarese, Michael S Ryoo, Juan Carlos Niebles
@@ -51,6 +31,35 @@
   link: https://arxiv.org/abs/2601.10781
   code: https://github.com/SalesforceAIResearch/FOFPred
   image: assets/publications/fofpred.jpg
+
+- title: "DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation"
+  authors: <strong>Yu Fang</strong>*, Wanxi Dong*, Jiaqi Liu, Yue Yang, Mingxiao Huo, Yao Mu, Huaxiu Yao, Li Erran Li, Daniel Szafir, Mingyu Ding
+  conference_short: arXiv
+  conference: arXiv, 2026.
+  page: https://dense-reward.github.io/
+  link: https://arxiv.org/abs/2607.13033
+  code: https://github.com/dense-reward/dense-reward
+  dataset: https://huggingface.co/datasets/densereward/DenseReward
+  models: https://huggingface.co/densereward/models
+  image: assets/publications/densereward.jpg
+
+- title: "WatchAct: A Benchmark for Behavior-Grounded Robot Manipulation"
+  authors: Baiqi Li, Ce Zhang, <strong>Yu Fang</strong>, Yue Yang, Shangzhe Li, Mingyu Ding, Gedas Bertasius
+  conference_short: arXiv
+  conference: arXiv, 2026.
+  page: https://baiqi-li.github.io/watchact_page/
+  link: https://arxiv.org/abs/2606.26443
+  code: https://github.com/Baiqi-Li/WatchAct
+  dataset: https://huggingface.co/datasets/BaiqiL/WatchAct
+  image: assets/publications/watchact.jpg
+
+- title: "Robotic VLA Benefits from Joint Learning with Motion Image Diffusion"
+  authors: <strong>Yu Fang</strong>, Kanchana Ranasinghe, Le Xue, Honglu Zhou, Juntao Tan, Ran Xu, Shelby Heinecke, Caiming Xiong, Silvio Savarese, Daniel Szafir, Mingyu Ding, Michael S. Ryoo, Juan Carlos Niebles
+  conference_short: arXiv
+  conference: arXiv, 2025.
+  page: https://vla-motion.github.io/
+  link: https://arxiv.org/abs/2512.18007
+  image: assets/publications/vla-motion.jpg
 
 - title: "ReBot: Scaling Robot Learning with Real-to-Sim-to-Real Robotic Video Synthesis"
   authors: <strong>Yu Fang</strong>, Yue Yang, Xinghao Zhu, Kaiyuan Zheng, Gedas Bertasius, Daniel Szafir, Mingyu Ding

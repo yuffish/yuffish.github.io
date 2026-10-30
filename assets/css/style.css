@@ -1,9 +1,16 @@
 /* General styles */
 
+button,
+input,
+select,
+textarea {
+  font-family: "Google Sans", sans-serif;
+}
+
 body {
   min-height: 100%;
   background-color: #fff;
-  font-family: Inter, sans-serif;
+  font-family: "Google Sans", sans-serif;
   color: #333;
   margin: 0 auto;
   box-sizing: border-box;
