@@ -35,7 +35,7 @@
 - title: "DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation"
   authors: <strong>Yu Fang</strong>*, Wanxi Dong*, Jiaqi Liu, Yue Yang, Mingxiao Huo, Yao Mu, Huaxiu Yao, Li Erran Li, Daniel Szafir, Mingyu Ding
   conference_short: arXiv
-  conference: arXiv, 2026.
+  conference: CoRL 2026 @ Oopsie
   page: https://dense-reward.github.io/
   link: https://arxiv.org/abs/2607.13033
   code: https://github.com/dense-reward/dense-reward
@@ -46,7 +46,7 @@
 - title: "WatchAct: A Benchmark for Behavior-Grounded Robot Manipulation"
   authors: Baiqi Li, Ce Zhang, <strong>Yu Fang</strong>, Yue Yang, Shangzhe Li, Mingyu Ding, Gedas Bertasius
   conference_short: arXiv
-  conference: arXiv, 2026.
+  conference: arXiv, 2026
   page: https://baiqi-li.github.io/watchact_page/
   link: https://arxiv.org/abs/2606.26443
   code: https://github.com/Baiqi-Li/WatchAct
@@ -56,7 +56,7 @@
 - title: "Robotic VLA Benefits from Joint Learning with Motion Image Diffusion"
   authors: <strong>Yu Fang</strong>, Kanchana Ranasinghe, Le Xue, Honglu Zhou, Juntao Tan, Ran Xu, Shelby Heinecke, Caiming Xiong, Silvio Savarese, Daniel Szafir, Mingyu Ding, Michael S. Ryoo, Juan Carlos Niebles
   conference_short: arXiv
-  conference: arXiv, 2025.
+  conference: CoRL 2026 @ TAG
   page: https://vla-motion.github.io/
   link: https://arxiv.org/abs/2512.18007
   image: assets/publications/vla-motion.jpg
@@ -82,7 +82,7 @@
 - title: "SNAF: Sparse-view CBCT Reconstruction with Neural Attenuation Fields"
   authors: <strong>Yu Fang</strong>, Lanzhuju Mei, Changjian Li, Yuan Liu, Wenping Wang, Zhiming Cui, Dinggang Shen
   conference_short: arXiv
-  conference: arXiv, 2022.
+  conference: arXiv, 2022
   link: https://arxiv.org/abs/2211.17048
   image: assets/publications/snaf22.jpg
 
@@ -108,7 +108,7 @@
 - title: "A Fully Automatic AI System for Tooth and Alveolar Bone Segmentation from Cone-beam CT Images"
   authors: Zhiming Cui*, <strong>Yu Fang</strong>*, Lanzhuju Mei*, Bojun Zhang*, Bo Yu, Jiameng Liu, Caiwen Jiang, Yuhang Sun, Lei Ma, Jiawei Huang, Yang Liu, Yue Zhao, Chunfeng Lian, Zhongxiang Ding, Min Zhu, Dinggang Shen
   conference_short: Nature Communications
-  conference: Nature Communications, 2022.
+  conference: Nature Communications, 2022
   link: https://www.nature.com/articles/s41467-022-29637-2
   pdf: assets/publications/A_fully_automatic_AI_system_for_tooth_and_alveolar_bone_segmentation_from_cone-beam_CT_images.pdf
   code: https://github.com/ErdanC/Tooth-and-alveolar-bone-segmentation-from-CBCT

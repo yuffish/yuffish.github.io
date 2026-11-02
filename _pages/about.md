@@ -20,4 +20,7 @@ I am a fourth year Ph.D. student in Computer Science at the University of North 
 
 <!-- My research interests lie in 3D computer vision and embodied AI. I focus on bridging the gap between simulation and the real world, as well as between agents and humans. I am broadly interested in developing spatial intelligence, embodied intelligence, and generative AI. -->
 
-I am broadly interested in embodied AI and robot learning. My long-term goal is to bridge the gap between simulation and the real world, and to develop agents with human-level perception, reasoning, and behavior. My current research focuses on: 1) VLA and world models for robotic manipulation, 2) synthetic data generation for sim-to-real applications, and 3) 3D/4D perception.
+<!-- I am broadly interested in embodied AI and robot learning. My long-term goal is to bridge the gap between simulation and the real world, and to develop agents with human-level perception, reasoning, and behavior. My current research focuses on: 1) VLA and world models for robotic manipulation, 2) synthetic data generation for sim-to-real applications, and 3) 3D/4D perception. -->
+
+<!-- 20261031 -->
+I am broadly interested in **embodied AI** and **robot learning**. My long-term goal is to develop and study scalable, generalizable, and reliable agents that can perceive, reason, and act in complex real-world environments. My current research includes: (1) foundation models for robotic manipulation, including VLAs, world models, and agentic policies; (2) synthetic data generation and sim-to-real applications; and (3) systematic and scalable evaluation of robot policies.
